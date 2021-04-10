@@ -50,6 +50,10 @@ with open (textoutput, 'w', newline='') as summary:
         ["Financial Analysis"],
         ["------------------"],
         ["Total Months: " + str(totalmonths)],
+        ["Total: $" + str(totalprofit)],
+        ["Average Change: $" + str(avgprofit)],
+        ["Greatest Increase in Profits: " + str(dateforprofit) + " $" + str(profit)],
+        ["Greatest Decrease in Profits: " + str(dateforloss) + " $" + str(loss)],
         ])
     
     
