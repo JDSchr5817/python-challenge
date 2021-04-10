@@ -26,8 +26,15 @@ for i in range(0,totalmonths-1):
     change = (profitlosses[i+1])-(profitlosses[i])
     if change >= profit:
         profit = change
-        dateforprofit = dates[i+1]
-    elif
+        dateforprofit = date[i+1]
+    elif change <= loss:
+        loss = change
+        dateforloss = date[i+1]
+    changetotal += change
+    
+avgprofit = changetotal/totalmonths
+
+
     
     
         
