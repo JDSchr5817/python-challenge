@@ -42,6 +42,15 @@ print(f"Average Change: ${avgprofit}")
 print(f"Greatest Increase in Profits: {dateforprofit} ${profit}")
 print(f"Greatest Decrease in Profits: {dateforloss} ${loss}")
 
+
+textoutput = os.path.join("Analysis", 'financial_summary.txt')
+with open (textoutput, 'w', newline='') as summary:
+    write = csv.writer(summary)
+    write.writerows([
+        ["Financial Analysis"],
+        ["------------------"],
+        ["Total Months: " + str(totalmonths)],
+        ])
     
     
         
