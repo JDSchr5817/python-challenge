@@ -4,15 +4,10 @@ import csv
 csvpath = os.path.join('.', 'Resources', 'budget_data.csv')
 
 
-with open(csvpath) as csvfile:
+def print_data(budget_data):
     
-    csvreader = csv.reader(csvfile, delimiter=',')
+    date = str(budget_data[0])
+    Profitlosses = int(budget_data[1])
     
-    print(csvreader)
-    
-    csv_header = next(csvreader)
-    print(f"CSV Header: {csv_header}")
-    
-    for row in csvreader:
-        print(row)
         
+
