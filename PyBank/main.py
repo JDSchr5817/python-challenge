@@ -34,6 +34,13 @@ for i in range(0,totalmonths-1):
     
 avgprofit = changetotal/totalmonths
 
+print("Financial Analysis")
+print("------------------")
+print(f"Total Months: {totalmonths}")
+print(f"Total: ${totalprofit}")
+print(f"Average Change: ${avgprofit}")
+print(f"Greatest Increase in Profits: {dateforprofit} ${profit}")
+
 
     
     
