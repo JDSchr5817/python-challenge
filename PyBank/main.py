@@ -40,7 +40,7 @@ print(f"Total Months: {totalmonths}")
 print(f"Total: ${totalprofit}")
 print(f"Average Change: ${avgprofit}")
 print(f"Greatest Increase in Profits: {dateforprofit} ${profit}")
-
+print(f"Greatest Decrease in Profits: {dateforloss} ${loss}")
 
     
     
