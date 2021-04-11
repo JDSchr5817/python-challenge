@@ -20,15 +20,22 @@ totalvoters=len(voterid)
 khanvotes = 0
 correyvotes = 0
 livotes = 0
+otooleyvotes = 0
 
 for i in range(1, totalvoters):
-    if (3, i) = str("Khan"):
+    if (2, i) == str("Khan"):
         khanvotes = khanvotes + 1
-    elif (3,i) = str("Correy"):
+    elif (3,i) == str("Correy"):
         correyvotes = correyvotes + 1
-    elif (3, i) = str("Li"):
+    elif (3, i) == str("Li"):
         livotes = livotes + 1
+    elif (3, i) == str("O'Tooley"):
+        otooleyvotes = otooleyvotes + 1
         
+print(khanvotes)
+
+
+
         
     
         
