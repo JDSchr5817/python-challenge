@@ -72,7 +72,7 @@ with open (textoutput, 'w', newline='') as summary:
     ["-----------------"],
     ["Winner: " + str(winnername)],
     ["-----------------"],
-    ])        
+    ])         
 
 
 
