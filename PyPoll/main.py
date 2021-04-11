@@ -16,4 +16,19 @@ with open(csvpath) as csvfile:
         candidate.append(row[2])
 
 totalvoters=len(voterid)
-print(totalvoters)
+
+khanvotes = 0
+correyvotes = 0
+livotes = 0
+
+for i in range(1, totalvoters):
+    if (3, i) = str("Khan"):
+        khanvotes = khanvotes + 1
+    elif (3,i) = str("Correy"):
+        correyvotes = correyvotes + 1
+    elif (3, i) = str("Li"):
+        livotes = livotes + 1
+        
+        
+    
+        
