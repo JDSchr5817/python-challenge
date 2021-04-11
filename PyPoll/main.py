@@ -14,4 +14,6 @@ with open(csvpath) as csvfile:
         voterid.append(row[0])
         county.append(row[1])
         candidate.append(row[2])
-        
+
+totalvoters=len(voterid)
+print(totalvoters)
