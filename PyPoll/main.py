@@ -1,38 +1,70 @@
 import os
 import csv
 
+
 csvpath = os.path.join('.', 'Resources', 'election_data.csv')
 
-voterid = []
-county = []
-candidate = []
-
-with open(csvpath) as csvfile:
-    csvReader = csv.reader(csvfile, delimiter=',')
-    next(csvfile)
-    for row in csvReader:
-        voterid.append(row[0])
-        county.append(row[1])
-        candidate.append(row[2])
-
-totalvoters=len(voterid)
-
+totalvotes = 0
 khanvotes = 0
 correyvotes = 0
 livotes = 0
 otooleyvotes = 0
 
-for i in range(1, totalvoters):
-    if (2, i) == str("Khan"):
-        khanvotes = khanvotes + 1
-    elif (3,i) == str("Correy"):
-        correyvotes = correyvotes + 1
-    elif (3, i) == str("Li"):
-        livotes = livotes + 1
-    elif (3, i) == str("O'Tooley"):
-        otooleyvotes = otooleyvotes + 1
+with open(csvpath, newline='') as csvfile:
+
+    csvreader = csv.reader(csvfile, delimiter=',')
+    
+    csv_header = next(csvfile)
+
+    for row in csvreader:
         
-print(khanvotes)
+        totalvotes += 1
+        
+        if (row[2] == "Khan"):
+            khanvotes += 1
+        elif (row[2] == "Correy"):
+            correyvotes += 1
+        elif (row[2] == "Li"):
+            livotes += 1
+        else:
+            otooleyvotes += 1
+            
+    kahnpercent = khanvotes / totalvotes
+    correypercent = correyvotes / totalvotes
+    lipercent = livotes / totalvotes
+    otooleypercent = otooleyvotes / totalvotes
+    
+    winner = max(khanvotes, correyvotes, livotes, otooleyvotes)
+
+    if winner == khanvotes:
+        winnername = "Khan"
+    elif winner == correyvotes:
+        winnername = "Correy"
+    elif winner == li_votes:
+        winnername = "Li"
+    else:
+        winnername = "O'Tooley" 
+
+print(f"Election Results")
+print(f"----------------")
+print(f"Total Votes: {totalvotes}")
+print(f"----------------")
+print(f"Kahn: {kahnpercent: .3%}({khanvotes})")
+print(f"Correy: {correypercent: .3%}({correyvotes})")
+print(f"Li: {lipercent: .3%}({livotes})")
+print(f"O'Tooley: {otooleypercent: .3%}({otooleyvotes})")
+print(f"---------------")
+print(f"Winner: {winnername}")
+print(f"---------------")
+
+textoutput = os.path.join("Analysis", 'vote_summary.txt')
+with open (textoutput, 'w', newline='') as summary:
+    write = csv.writer(summary)
+    write.writerows([
+    
+        
+            
+
 
 
 
