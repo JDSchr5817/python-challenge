@@ -29,7 +29,7 @@ with open(csvpath, newline='') as csvfile:
         else:
             otooleyvotes += 1
             
-    kahnpercent = khanvotes / totalvotes
+    khanpercent = khanvotes / totalvotes
     correypercent = correyvotes / totalvotes
     lipercent = livotes / totalvotes
     otooleypercent = otooleyvotes / totalvotes
@@ -40,7 +40,7 @@ with open(csvpath, newline='') as csvfile:
         winnername = "Khan"
     elif winner == correyvotes:
         winnername = "Correy"
-    elif winner == li_votes:
+    elif winner == livotes:
         winnername = "Li"
     else:
         winnername = "O'Tooley" 
@@ -49,7 +49,7 @@ print(f"Election Results")
 print(f"----------------")
 print(f"Total Votes: {totalvotes}")
 print(f"----------------")
-print(f"Kahn: {kahnpercent: .3%}({khanvotes})")
+print(f"Kahn: {khanpercent: .3%}({khanvotes})")
 print(f"Correy: {correypercent: .3%}({correyvotes})")
 print(f"Li: {lipercent: .3%}({livotes})")
 print(f"O'Tooley: {otooleypercent: .3%}({otooleyvotes})")
@@ -61,9 +61,18 @@ textoutput = os.path.join("Analysis", 'vote_summary.txt')
 with open (textoutput, 'w', newline='') as summary:
     write = csv.writer(summary)
     write.writerows([
-    
-        
-            
+    [" Election Results"],
+    ["-----------------"],
+    ["Total Votes: " + str(totalvotes)],
+    ["-----------------"],
+    ["Khan : " + str(khanpercent) + " " + str(khanvotes)],
+    ["Correy : " + str(correypercent) + " " + str(correyvotes)],
+    ["Li : " + str(lipercent) + " " + str(livotes)],   
+    ["O'Tooley' : " + str(otooleypercent) + " " + str(otooleyvotes)],
+    ["-----------------"],
+    ["Winner: " + str(winnername)],
+    ["-----------------"],
+    ])        
 
 
 
